@@ -18,6 +18,7 @@ namespace MainProj
         {
             System.Threading.Thread.CurrentThread.Name = "Main";
             Logger.Init();
+
             //Logger.Error("Hello Error");
             //Logger.Debug("Hello Debug");
             //Logger.Info("Hello Info");
