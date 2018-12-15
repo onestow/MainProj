@@ -1,0 +1,32 @@
+﻿<Window x:Class="MainProj.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MainProj"
+        xmlns:viewmodel="clr-namespace:MainProj.ViewModel"
+        xmlns:model="clr-namespace:MainProj.Model"
+        mc:Ignorable="d"
+        Title="一堆不知道什么的合集" Height="450" Width="800" WindowState="Maximized">
+    <!--<Window.DataContext>
+        <viewmodel:MenuViewModel/>
+        <model:MenuModel/>
+    </Window.DataContext>-->
+    <DockPanel>
+        <TreeView Name="tvNavi" Width="200" MouseDoubleClick="tvNavi_MouseDoubleClick">
+            <TreeView.ItemTemplate>
+                <HierarchicalDataTemplate DataType="{x:Type model:MenuModel}" ItemsSource="{Binding Path=SubMenu}">
+                    <StackPanel Orientation="Horizontal" Width="auto">
+                        <Image VerticalAlignment="Center" Source="{Binding Icon}" Height="16" Width="16" Margin="0,0,2,2"></Image>
+                        <TextBlock VerticalAlignment="Center" Text="{Binding MenuName}"></TextBlock>
+                        <!--<StackPanel.InputBindings>
+                            <MouseBinding Command="{Binding DataContext.ShowInfoCommand, ElementName=window}" MouseAction="LeftDoubleClick"/>
+                        </StackPanel.InputBindings>-->
+                    </StackPanel>
+                </HierarchicalDataTemplate>
+            </TreeView.ItemTemplate>
+        </TreeView>
+        <TabControl Name="SubWindowsArea">
+        </TabControl>
+    </DockPanel>
+</Window>
